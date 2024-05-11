@@ -46,9 +46,9 @@ def show_all(contacts):
 
 def main():
     contacts = {}
-    print("Welcome, USER! This is your personal assistant bot!!!")
+    print("Welcome, USER! This is your personal bot!")
     while True:
-        user_input = input("Enter a command: ")
+        user_input = input("Enter your command: ")
         command, *args = parse_input(user_input)
 
         if command in ["close", "exit"]:
