@@ -6,9 +6,8 @@ from colorama import Fore, Style
 def visualize_directory_structure(directory_path):
     try:
         if not os.path.exists(directory_path):
-            raise FileNotFoundError("Directory not found.")
+            raise FileNotFoundError("OOPS! No such directory! Check your path!")
 
-        # Вспомогательная функция для рекурсивного обхода директорий и файлов
         def _visualize_directory(directory, indent=""):
             for item in os.listdir(directory):
                 item_path = os.path.join(directory, item)
@@ -21,15 +20,15 @@ def visualize_directory_structure(directory_path):
         print(Fore.YELLOW + "Directory structure:")
         _visualize_directory(directory_path)
 
-    except FileNotFoundError as e:
-        print(Fore.RED + f"Error: {e}")
-    except Exception as e:
-        print(Fore.RED + f"An error occurred: {e}")
+    except FileNotFoundError as error_msg:
+        print(Fore.RED + f"Error: {error_msg}")
+    except Exception as error_msg:
+        print(Fore.RED + f"Warning! Error: {error_msg}")
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Вводим в терминале: python hw3.py C:/Users/br4vetrave1er/Desktop/projects/goit-algo-hw-04")
+        print("Вводим в терминале - python, имя файла со скриптом через пробел - hw3.py и адрес папки - C:/Users/br4vetrave1er/Desktop/projects/goit-algo-hw-04")
     else:
         directory_path = sys.argv[1]
         visualize_directory_structure(directory_path)
