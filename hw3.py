@@ -28,7 +28,7 @@ def visualize_directory_structure(directory_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Вводим в терминале - python, имя файла со скриптом через пробел - hw3.py и адрес папки - C:/Users/br4vetrave1er/Desktop/projects/goit-algo-hw-04")
+        print("Вводим в терминале - python, имя файла со скриптом через пробел - hw3.py и адрес интересующей нас папки - C:/Users/br4vetrave1er/Desktop/projects/goit-algo-hw-04")
     else:
         directory_path = sys.argv[1]
         visualize_directory_structure(directory_path)
